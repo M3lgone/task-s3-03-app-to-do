@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do Ghost - Tasks Made Easy</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body>
-	<?php echo $this->content(); ?>
+<body class="bg-slate-50 min-h-screen flex flex-col">
+
+    <header class="bg-gradient-to-r from-sky-400 via-sky-200 to-sky-50 shadow-sm border-b border-sky-100 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            
+            <div class="flex items-center gap-2">
+                <div class="bg-white/40 p-1 rounded-lg backdrop-blur-sm">
+                    <span class="text-2xl">👻</span>
+                </div>
+                <span class="text-xl font-black tracking-tighter text-sky-900">
+                    To Do <span class="text-white drop-shadow-sm">Ghost</span>
+                </span>
+            </div>
+
+            <nav class="flex gap-6 text-sm font-semibold text-sky-900/80">
+                <a href="<?php echo WEB_ROOT; ?>/" class="hover:text-sky-400 transition-colors">Home</a>
+                <a href="<?php echo WEB_ROOT; ?>/dashboard" class="hover:text-sky-400 transition-colors">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <?php echo $this->content(); ?>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xs font-medium text-slate-400 tracking-widest uppercase">
+                &copy; <?php echo date('Y'); ?> To do Ghost • Tasks Made Easy To Disappear
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
