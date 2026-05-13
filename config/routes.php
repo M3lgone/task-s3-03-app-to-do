@@ -12,5 +12,6 @@
  */
 $routes = array(
     '/' => 'home#index',
+    '/dashboard' => 'dashboard#index',
     '/test' => 'test#index'
 );
