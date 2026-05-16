@@ -23,6 +23,8 @@ class TaskController extends Controller
                     $_POST['finish_date'],
                     $_POST['user']
                 );
+                header('Location: ' . WEB_ROOT . '/dashboard');
+                exit();
             }
         }
     }
