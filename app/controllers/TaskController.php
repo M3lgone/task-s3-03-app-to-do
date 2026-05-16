@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class TaskController extends Controller
 {
     public function createAction()
