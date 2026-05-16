@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Prueba",
+        "description": "comprobacion de addtask()",
+        "status": "pending",
+        "startDate": "2026-05-16",
+        "finishDate": "2026-05-21",
+        "user": "isma"
+    },
+    {
+        "name": "Prueba 2",
+        "description": "comprobacion para funcion json pretty print",
+        "status": "pending",
+        "startDate": "2026-05-16",
+        "finishDate": "2026-05-21",
+        "user": "max"
+    },
+    {
+        "name": "Prueba 2",
+        "description": "comprobacion para funcion json pretty print",
+        "status": "pending",
+        "startDate": "2026-05-16",
+        "finishDate": "2026-05-21",
+        "user": "max"
+    },
+    {
+        "name": "Prueba 2",
+        "description": "comprobacion para funcion json pretty print",
+        "status": "pending",
+        "startDate": "2026-05-16",
+        "finishDate": "2026-05-21",
+        "user": "max"
+    }
+]
