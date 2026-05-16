@@ -12,6 +12,18 @@ class TaskController extends Controller
                     $errors[] = $field . ' is required';
                 }
             }
+            if (!empty($errors)) {
+                $this->view->errors = $errors;
+            } else {
+                $model = new TaskModel();
+                $model->addTask(
+                    $_POST['name'],
+                    $_POST['description'],
+                    $_POST['start_date'],
+                    $_POST['finish_date'],
+                    $_POST['user']
+                );
+            }
         }
     }
 }
