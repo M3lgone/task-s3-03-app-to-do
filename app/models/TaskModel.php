@@ -30,7 +30,7 @@ class TaskModel
 
     }
 
-    private function getTasks(): array
+    public function getTasks(): array
     {
         if (!file_exists($this->file)) {
             return[];
