@@ -12,6 +12,13 @@ class DashboardController extends Controller
     }
     public function indexAction()
     {
-        $this->view->tasks = $this->taskModel->getTasks();
+        $tasks = $this->taskModel->getTasks();
+
+        $status = $this->_getParam('status');
+
+        if ($status) {
+            $tasks = array_filter($tasks, fn ($task) => $task['status'] === $status);
+        }
+        $this->view->tasks = $tasks;
     }
 }
