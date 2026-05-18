@@ -38,5 +38,13 @@
         "startDate": "2026-05-20",
         "finishDate": "2026-05-29",
         "user": "anton"
+    },
+    {
+        "name": "crear tasca",
+        "description": "crear nova tasca",
+        "status": "pending",
+        "startDate": "2026-05-20",
+        "finishDate": "2026-05-22",
+        "user": "lluc"
     }
 ]
