@@ -8,14 +8,14 @@
     </div>
 
     <div class="flex gap-2 mb-6">
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold bg-sky-500 text-white">All</button>
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold bg-white text-slate-500 border border-slate-200 hover:border-sky-300">Pending</button>
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold bg-white text-slate-500 border border-slate-200 hover:border-sky-300">In Progress</button>
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold bg-white text-slate-500 border border-slate-200 hover:border-sky-300">Done</button>
+        <a href="<?= WEB_ROOT ?>/dashboard" class="px-4 py-1.5 rounded-full text-sm font-semibold bg-sky-700 hover:bg-sky-200 text-white text-sm font-semibold transition-colors">All</a>
+        <a href="<?= WEB_ROOT ?>/dashboard?status=pending" class="px-4 py-1.5 rounded-full text-sm font-semibold bg-white text-sky-600 border border-slate-200 hover:border-sky-400">Pending</a>
+        <a href="<?= WEB_ROOT ?>/dashboard?status=in_progress" class="px-4 py-1.5 rounded-full text-sm font-semibold bg-white text-sky-500 border border-slate-200 hover:border-sky-400">In Progress</a>
+        <a href="<?= WEB_ROOT ?>/dashboard?status=done" class="px-4 py-1.5 rounded-full text-sm font-semibold bg-white text-sky-400 border border-slate-200 hover:border-sky-400">Done</a>
     </div>
 
     <div class="flex justify-center mb-6">
-    <a href="<?php echo WEB_ROOT; ?>/task/create" class="inline-flex items-center gap-2 px-6 py-2.5 bg-sky-500 hover:bg-sky-200 text-white text-sm font-semibold rounded-xl transition-colors">
+    <a href="<?php echo WEB_ROOT; ?>/task/create" class="inline-flex items-center gap-2 px-6 py-2.5 bg-sky-700 hover:bg-sky-200 text-white text-sm font-semibold rounded-xl transition-colors">
         + Add Task
     </a>
     </div>
