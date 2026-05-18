@@ -30,5 +30,13 @@
         "startDate": "2026-05-16",
         "finishDate": "2026-05-21",
         "user": "max"
+    },
+    {
+        "name": "prueba 3",
+        "description": "comprobando",
+        "status": "pending",
+        "startDate": "2026-05-20",
+        "finishDate": "2026-05-29",
+        "user": "anton"
     }
 ]

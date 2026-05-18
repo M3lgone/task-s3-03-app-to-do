@@ -28,7 +28,8 @@
                     <th class="px-6 py-4 text-left text-sky-700">State</th>
                     <th class="px-6 py-4 text-left text-sky-600">Start Date</th>
                     <th class="px-6 py-4 text-left text-sky-500">Finish Date</th>
-                    <th class="px-6 py-4 text-left text-sky-400">Actions</th>
+                    <th class="px-6 py-4 text-left text-sky-400">User</th>
+                    <th class="px-6 py-4 text-left text-sky-300">Actions</th>
                 </tr>
             </thead>
             <?php foreach ($this->tasks as $task): ?>
@@ -42,6 +43,7 @@
                     </td>
                         <td class="px-6 py-4 text-slate-400"><?= $task['startDate'] ?></td>
                         <td class="px-6 py-4 text-slate-400"><?= $task['finishDate'] ?></td>
+                        <td class="px-6 py-4 text-slate-400"><?= $task['user'] ?></td>
                     <td class="px-6 py-4 flex gap-2">
                         <a href="#" class="text-xs font-semibold text-sky-500 hover:text-sky-700">Edit</a>
                         <a href="#" class="text-xs font-semibold text-red-400 hover:text-red-600">Delete</a>
