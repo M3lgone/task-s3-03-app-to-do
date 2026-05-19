@@ -16,6 +16,7 @@ class TaskModel
         $tasks = $this->getTasks();
 
         $task = [
+            "id" => $this->generateId($tasks),
             "name" => $name,
             "description" => $description,
             "status" => TaskStatus::PENDING->value,
@@ -49,6 +50,14 @@ class TaskModel
     private function saveTasks(array $tasks): void
     {
         file_put_contents($this->file, json_encode($tasks, JSON_PRETTY_PRINT));
+    }
+
+    private function generateId(array $tasks): int
+    {
+        if (empty($tasks)) {
+            return 1;
+        }
+        return max(array_column($tasks, 'id')) + 1;
     }
 
 }
