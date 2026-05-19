@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 class TaskController extends Controller
 {
+    private TaskModel $taskModel;
+
+    public function __construct()
+    {
+        $this->taskModel = new TaskModel();
+    }
+
     public function createAction()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,6 +39,7 @@ class TaskController extends Controller
     }
     public function editAction()
     {
-
+        $id = (int) $this->_getParam('id');
+        $this->view->task = $this->taskModel->getTaskById($id);
     }
 }
