@@ -60,4 +60,14 @@ class TaskModel
         return max(array_column($tasks, 'id')) + 1;
     }
 
+    public function getTaskById(int $id): ?array
+    {
+        foreach ($this->getTasks() as $task) {
+            if ($task['id'] === $id) {
+                return $task;
+            }
+        }
+        return null;
+    }
+
 }
