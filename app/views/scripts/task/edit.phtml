@@ -6,29 +6,29 @@
         <div class="bg-gradient-to-r from-sky-400 via-sky-200 to-sky-50 rounded-2xl shadow-sm border border-slate-100 p-8 flex flex-col gap-6">
 
             <div class="flex flex-col gap-1.5">
-                <label class="text-sm font-semibold text-slate-600">Name</label>
-                <input type="text" name="name" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400" placeholder="Task name">
+                <label class="text-sm font-semibold text-slate-600" >Name</label>
+                <input type="text" name="name" value="<?= $this->task['name'] ?>" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400" placeholder="Task name">
             </div>
 
             <div class="flex flex-col gap-1.5">
                 <label class="text-sm font-semibold text-slate-600">Description</label>
-                <textarea name="description" rows="3" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400" placeholder="Task description"></textarea>
+                <textarea name="description" rows="3" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400"><?= $this->task['description'] ?></textarea>
             </div>
 
             <div class="flex gap-4">
                 <div class="flex flex-col gap-1.5 flex-1">
                     <label class="text-sm font-semibold text-slate-600">Start Date</label>
-                    <input type="date" name="start_date" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400">
+                    <input type="date" name="start_date" value="<?= $this->task['startDate'] ?>" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400">
                 </div>
                 <div class="flex flex-col gap-1.5 flex-1">
                     <label class="text-sm font-semibold text-slate-600">Finish Date</label>
-                    <input type="date" name="finish_date" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400">
+                    <input type="date" name="finish_date" value="<?=  $this->task['finishDate'] ?>"border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400">
                 </div>
             </div>
 
             <div class="flex flex-col gap-1.5">
                 <label class="text-sm font-semibold text-slate-600">User</label>
-                <input type="text" name="user" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400" placeholder="Your name">
+                <input type="text" name="user" value="<?= $this->task['user'] ?>" class="border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-sky-400" placeholder="Your name">
             </div>
 
             <div class="flex justify-end gap-3 mt-2">
