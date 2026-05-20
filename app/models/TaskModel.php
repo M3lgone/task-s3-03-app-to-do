@@ -16,6 +16,7 @@ class TaskModel
         $tasks = $this->getTasks();
 
         $task = [
+            "id" => $this->generateId($tasks),
             "name" => $name,
             "description" => $description,
             "status" => TaskStatus::PENDING->value,
@@ -49,6 +50,41 @@ class TaskModel
     private function saveTasks(array $tasks): void
     {
         file_put_contents($this->file, json_encode($tasks, JSON_PRETTY_PRINT));
+    }
+
+    private function generateId(array $tasks): int
+    {
+        if (empty($tasks)) {
+            return 1;
+        }
+        return max(array_column($tasks, 'id')) + 1;
+    }
+
+    public function getTaskById(int $id): ?array
+    {
+        foreach ($this->getTasks() as $task) {
+            if ($task['id'] === $id) {
+                return $task;
+            }
+        }
+        return null;
+    }
+
+    public function updateTask(int $id, string $name, string $description, string $startDate, string $finishDate, string $user): void
+    {
+
+        $tasks = $this->getTasks();
+
+        foreach ($tasks as $key => $task) {
+            if ($task['id'] === $id) {
+                $tasks[$key]['name'] = $name;
+                $tasks[$key]['description'] = $description;
+                $tasks[$key]['startDate'] = $startDate;
+                $tasks[$key]['finishDate'] = $finishDate;
+                $tasks[$key]['user'] = $user;
+            }
+        }
+        $this->saveTasks($tasks);
     }
 
 }

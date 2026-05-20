@@ -1,50 +1,20 @@
 [
     {
-        "name": "Prueba",
-        "description": "comprobacion de addtask()",
+        "id": 1,
+        "name": "Check id task edited",
+        "description": "Check task ID to verify it works edited",
         "status": "pending",
-        "startDate": "2026-05-16",
-        "finishDate": "2026-05-21",
-        "user": "isma"
+        "startDate": "2026-05-21",
+        "finishDate": "2026-05-24",
+        "user": "Maxwell"
     },
     {
-        "name": "Prueba 2",
-        "description": "comprobacion para funcion json pretty print",
+        "id": 2,
+        "name": "Check id 2",
+        "description": "Check 2 task ID to verify it works",
         "status": "pending",
-        "startDate": "2026-05-16",
-        "finishDate": "2026-05-21",
-        "user": "max"
-    },
-    {
-        "name": "Prueba 2",
-        "description": "comprobacion para funcion json pretty print",
-        "status": "pending",
-        "startDate": "2026-05-16",
-        "finishDate": "2026-05-21",
-        "user": "max"
-    },
-    {
-        "name": "Prueba 2",
-        "description": "comprobacion para funcion json pretty print",
-        "status": "pending",
-        "startDate": "2026-05-16",
-        "finishDate": "2026-05-21",
-        "user": "max"
-    },
-    {
-        "name": "prueba 3",
-        "description": "comprobando",
-        "status": "pending",
-        "startDate": "2026-05-20",
-        "finishDate": "2026-05-29",
-        "user": "anton"
-    },
-    {
-        "name": "crear tasca",
-        "description": "crear nova tasca",
-        "status": "pending",
-        "startDate": "2026-05-20",
-        "finishDate": "2026-05-22",
-        "user": "lluc"
+        "startDate": "2026-06-02",
+        "finishDate": "2026-06-11",
+        "user": "Max"
     }
 ]
