@@ -70,4 +70,21 @@ class TaskModel
         return null;
     }
 
+    public function updateTask(int $id, string $name, string $description, string $startDate, string $finishDate, string $user): void
+    {
+
+        $tasks = $this->getTasks();
+
+        foreach ($tasks as $key => $task) {
+            if ($task['id'] === $id) {
+                $tasks[$key]['name'] = $name;
+                $tasks[$key]['description'] = $description;
+                $tasks[$key]['startDate'] = $startDate;
+                $tasks[$key]['finishDate'] = $finishDate;
+                $tasks[$key]['user'] = $user;
+            }
+        }
+        $this->saveTasks($tasks);
+    }
+
 }
