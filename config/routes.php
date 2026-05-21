@@ -15,5 +15,6 @@ $routes = array(
     '/dashboard' => 'dashboard#index',
     '/task/create' => 'task#create',
     '/task/edit' => 'task#edit',
+    '/task/delete' => 'task#delete',
     '/test' => 'test#index'
 );

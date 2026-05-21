@@ -7,14 +7,5 @@
         "startDate": "2026-05-21",
         "finishDate": "2026-05-24",
         "user": "Maxwell"
-    },
-    {
-        "id": 2,
-        "name": "Check id 2",
-        "description": "Check 2 task ID to verify it works",
-        "status": "pending",
-        "startDate": "2026-06-02",
-        "finishDate": "2026-06-11",
-        "user": "Max"
     }
 ]
