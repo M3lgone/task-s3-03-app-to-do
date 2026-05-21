@@ -72,7 +72,6 @@ class TaskModel
 
     public function updateTask(int $id, string $name, string $description, string $startDate, string $finishDate, string $user): void
     {
-
         $tasks = $this->getTasks();
 
         foreach ($tasks as $key => $task) {
@@ -85,6 +84,16 @@ class TaskModel
             }
         }
         $this->saveTasks($tasks);
+    }
+
+    public function deleteTask(int $id): void
+    {
+
+        $tasks = $this->getTasks();
+
+        $tasks = array_filter($tasks, fn ($task) => $task['id'] !== $id);
+
+        $this->saveTasks(array_values($tasks));
     }
 
 }
