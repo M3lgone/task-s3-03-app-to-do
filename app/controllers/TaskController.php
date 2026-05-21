@@ -66,4 +66,14 @@ class TaskController extends Controller
         }
         $this->view->task = $this->taskModel->getTaskById($id);
     }
+
+    public function deleteAction()
+    {
+        $id = (int) $this->_getParam('id');
+
+        $this->taskModel->deleteTask($id);
+
+        header('Location: ' . WEB_ROOT . '/dashboard');
+        exit();
+    }
 }
