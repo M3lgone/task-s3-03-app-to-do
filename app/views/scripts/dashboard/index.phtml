@@ -25,6 +25,7 @@
         <table class="w-full text-sm">
             <thead class="bg-gradient-to-r from-sky-400 via-sky-200 to-sky-50 text-slate-400 uppercase text-xs tracking-wider">
                 <tr>
+                    <th class="px-6 py-4"></th>
                     <th class="px-6 py-4 text-left text-white drop-shadow-md">Name</th>
                     <th class="px-6 py-4 text-center text-sky-500 drop-shadow-md">Status</th>
                     <th class="px-6 py-4 text-center text-sky-600 drop-shadow-md">Start Date</th>
@@ -35,6 +36,12 @@
             </thead>
             <?php foreach ($this->tasks as $task): ?>
                 <tr class="hover:bg-sky-50 transition-colors duration-200">
+                    <td class="px-6 py-4">
+                        <form method="POST" action="<?= WEB_ROOT ?>/task/check">
+                            <input type="hidden" name="id" value="<?= $task['id'] ?>">
+                            <button type="submit" class="w-5 h-5 rounded-full border-2 border-sky-300 hover:border-sky-500 transition-all duration-200"></button>
+                        </form>
+                    </td>
                     <td class="px-6 py-4">
                         <span class="font-medium text-slate-700"><?= $task['name'] ?></span>
                         <p class="text-xs text-slate-400 mt-0.5"><?= $task['description'] ?></p>
