@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 enum TaskStatus: string
 {
-    case PENDING = 'pending';
-    case IN_PROGRESS = 'in_progress';
+    case PENDING = 'Pending';
+    case IN_PROGRESS = 'In progress';
     case DONE = 'Done';
 }
