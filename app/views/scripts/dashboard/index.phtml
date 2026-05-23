@@ -39,7 +39,7 @@
                     <td class="px-6 py-4">
                         <form method="POST" action="<?= WEB_ROOT ?>/task/check">
                             <input type="hidden" name="id" value="<?= $task['id'] ?>">
-                            <button type="submit" class="w-5 h-5 rounded-full border-2 border-sky-300 hover:border-sky-500 transition-all duration-200"></button>
+                            <button type="submit" class="w-5 h-5 rounded-full border-2 <?= TaskStatus::from($task['status'])->getButtonClass() ?> hover:border-sky-500 transition-all duration-200"></button>
                         </form>
                     </td>
                     <td class="px-6 py-4">
