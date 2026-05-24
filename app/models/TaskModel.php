@@ -88,12 +88,31 @@ class TaskModel
 
     public function deleteTask(int $id): void
     {
-
         $tasks = $this->getTasks();
 
         $tasks = array_filter($tasks, fn ($task) => $task['id'] !== $id);
 
         $this->saveTasks(array_values($tasks));
+    }
+
+    public function nextStatus(int $id): void
+    {
+        $tasks = $this->getTasks();
+
+        foreach ($tasks as $key => $task) {
+            if ($task['id'] === $id) {
+                $current = $task['status'];
+
+                if ($current === TaskStatus::PENDING->value) {
+                    $tasks[$key]['status'] = TaskStatus::IN_PROGRESS->value;
+                } elseif ($current === TaskStatus::IN_PROGRESS->value) {
+                    $tasks[$key]['status'] = TaskStatus::DONE->value;
+                } else {
+                    $tasks[$key]['status'] = TaskStatus::PENDING->value;
+                }
+            }
+        }
+        $this->saveTasks($tasks);
     }
 
 }

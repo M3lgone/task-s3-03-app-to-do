@@ -76,4 +76,12 @@ class TaskController extends Controller
         header('Location: ' . WEB_ROOT . '/dashboard');
         exit();
     }
+
+    public function checkAction()
+    {
+        $id = (int) $_POST['id'];
+        $this->taskModel->nextStatus($id);
+        header('Location: ' . WEB_ROOT . '/dashboard');
+        exit();
+    }
 }

@@ -1,83 +1,163 @@
-# PHP initial Project
-Main structure of php project. Folders / files:
-- **app**
-  - **controllers**
-  - **models**
-  - **views**
-- **config**
-- **lib**
-  - **base**
-- **web**
+<p align="center">
+  <img src="web/images/logo-ghost.png" alt="To Do Ghost Logo" width="100"/>
+</p>
 
-### Usage
+<h1 align="center">To Do Ghost</h1>
+<p align="center"><em>Tasks Made Easy To Disappear</em></p>
 
-The web/index.php is the heart of the system.
-This means that your web applications root folder is the “web” folder.
+---
 
-All requests go through this file and it decides how the routing of the app
-should be.
-You can add additional hooks in this file to add certain routes.
+## 📄 Description
 
-### Project Structure
+**To Do Ghost** is a task management web application built with PHP following the **MVC (Model-View-Controller)** architectural pattern.
 
-The root of the project holds a few directories:
-**/app** This is the folder where your magic will happen. Use the views, controllers and models folder for your app code.
-**/config** this folder holds a few configuration files. Currently only the connection to the database.
-**/lib** This is where you should put external libraries and other external files.
-**/lib/base** The library files. Don’t change these :)
-**/web** This folder holds files that are to be “downloaded” from your app. Stylesheets, javascripts and images used. (and more of course)
+The application allows users to create, list, update, and delete tasks, as well as track their status throughout the workflow — from pending to in progress to done.
 
-The system uses a basic MVC structure, with your web app’s files located in the
-“app” folder.
+This project was developed individually as part of Sprint 3, applying git flow methodology and MVC architecture with a custom PHP framework.
 
-#### app/controllers
-Your application’s controllers should be defined here.
+---
 
-All controller names should end with “Controller”. E.g. TestController.
-All controllers should inherit the library’s “Controller” class.
-However, you should generally just make an ApplicationController, which extends
-the Controller. Then you can defined beforeFilters etc in that, which will get run
-at every request.
+## 🎯 Features
 
-#### app/models
-Models handles database interaction etc.
+* ➕ Create tasks with name, description, start date, finish date and user
+* 📋 List all tasks in the dashboard
+* 🔍 Filter tasks by status (Pending, In Progress, Done)
+* ✏️ Edit existing tasks
+* 🗑️ Delete tasks
+* 🔘 Change task status directly from the dashboard
+* 📱 Responsive design — table on desktop, cards on mobile
 
-All models should inherit from the Model class, which provides basic functionality.
-The Model class handles basic functionality such as:
+---
 
-Setting up a database connection (using PDO)
-fetchOne(ID)
-save(array) → both update/create
-delete(ID)
-app/views
-Your view files.
-The structure is made so that having a controller named TestController, it looks
-in the app/views/test/ folder for it’s view files.
+## 🛠 Technologies
 
-All view files end with .phtml
-Having an action in the TestController called index, the view file
-app/views/test/index.phtml will be rendered as default.
+* PHP 8.1+
+* Tailwind CSS (via CDN)
+* JSON (data storage)
+* HTML5
+* Git & GitHub (Git Flow)
 
-#### config/routes.php
-Your routes around the system needs to be defined here.
-A route consists of the URL you want to call + the controller#action you want it
-to hit.
+---
 
-An example is:
-$routes = array(
-‘/test’ => ‘test#index’ // this will hit the TestController’s indexAction method.
-);
+## ⚙️ Requirements
 
-#### Error handling
-A general error handling has been added.
+* PHP 8.1 or higher
+* Web server (Apache or PHP built-in server)
 
-If a route doesn’t exist, then the error controller is hit.
-If some other exception was thrown, the error controller is hit.
-As default, the error controller just shows the exception occured, so remember
-to style the error controller’s view file (app/views/error/error.phtml)
+---
 
+## 🚀 Installation
 
-### Utilities
-- [PHP Developers Guide](https://www.php.net/manual/en/index.php).
-- .gitignore file configuration. [See Official Docs](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
-- Git branches. [See Official Docs](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
+Clone the repository:
+
+```bash
+git clone https://github.com/M3lgone/task-s3-03-app-to-do.git
+```
+
+Navigate to the project:
+
+```bash
+cd task-s3-03-app-to-do
+```
+
+Start the PHP built-in server from the `web/` folder:
+
+```bash
+php -S localhost:8000 -t web/
+```
+
+Open your browser at:
+
+```
+http://localhost:8000
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+task-s3-03-app-to-do/
+├── app/
+│   ├── controllers/
+│   │   ├── DashboardController.php
+│   │   ├── HomeController.php
+│   │   └── TaskController.php
+│   ├── models/
+│   │   ├── TaskModel.php
+│   │   └── TaskStatus.php
+│   └── views/
+│       ├── layouts/
+│       │   └── layout.phtml
+│       └── scripts/
+│           ├── dashboard/
+│           │   └── index.phtml
+│           ├── home/
+│           │   └── index.phtml
+│           └── task/
+│               ├── create.phtml
+│               └── edit.phtml
+├── config/
+│   └── routes.php
+├── lib/
+│   └── base/
+│       ├── Controller.php
+│       ├── Router.php
+│       └── View.php
+├── web/
+│   ├── images/
+│   └── index.php
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 🔄 MVC Flow
+
+```
+User → index.php → Router → Controller → Model (JSON) → Controller → View → User
+```
+
+* **Model** — reads and writes `tasks.json`
+* **View** — renders HTML with the data provided
+* **Controller** — handles HTTP requests and connects model and view
+
+---
+
+## 📸 Preview
+
+### Home
+![Home](web/images/home-ghost.png)
+
+### Dashboard
+![Dashboard](web/images/dashboard-ghost.png)
+
+### Create Task
+![Create Task](web/images/create-ghost.png)
+
+### Edit Task
+![Edit Task](web/images/edit-ghost.png)
+
+---
+
+## 🌿 Git Flow
+
+This project follows the **Git Flow** branching strategy:
+
+* `main` — production-ready code
+* `develop` — integration branch
+* `feature/*` — new features
+
+---
+
+## ✅ Use Cases
+
+* [x] Create task
+* [x] Update task
+* [x] Delete task
+* [x] List all tasks
+* [x] Filter tasks by status
+* [x] Change task status from dashboard
+
+---
