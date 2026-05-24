@@ -63,13 +63,13 @@ cd task-s3-03-app-to-do
 Start the PHP built-in server from the `web/` folder:
 
 ```bash
-php -S 127.0.0.1:8000 -t web/
+php -S localhost:8000 -t web/
 ```
 
 Open your browser at:
 
 ```
-http://127.0.0.1:8000
+http://localhost:8000
 ```
 
 ---
